@@ -1,12 +1,11 @@
-import api from "../../assets/api"
-
+import api from "../../assets/api";
 
 const categorysModule = {
   state: {
-    categorys: []
+    categorys: [],
   },
   getters: {
-    categorys: state => state.categorys,
+    categorys: (state) => state.categorys,
   },
   actions: {
     getAllCategogys: async ({ commit }) => {
@@ -21,8 +20,8 @@ const categorysModule = {
   mutations: {
     SET_CATEGOGY: (state, category) => {
       state.categorys = category;
-    }
-  }
-}
+    },
+  },
+};
 
-export default categorysModule
+export default categorysModule;

@@ -1,15 +1,15 @@
 <template>
-  <NavigationBar/>
+  <NavigationBar />
   <slot />
-  <NavigationBottom/>
+  <NavigationBottom />
 </template>
 <script>
-import NavigationBar from "../components/NavigationBar.vue"
-import NavigationBottom from "../components/NavigationBottom.vue"
+import NavigationBar from "../components/NavigationBar.vue";
+import NavigationBottom from "../components/NavigationBottom.vue";
 export default {
   components: {
     NavigationBar,
-    NavigationBottom
-  }
-}
+    NavigationBottom,
+  },
+};
 </script>

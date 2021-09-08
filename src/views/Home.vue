@@ -11,7 +11,6 @@
     <div class="bg-bgcontent px-80 mb-28">
       <Sale />
     </div>
-
   </div>
 </template>
 
@@ -31,6 +30,5 @@ export default {
     RoomBuildForYou,
     LogoFashion,
   },
-  
 };
 </script>

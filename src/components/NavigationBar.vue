@@ -14,9 +14,7 @@
       shadow-sm
       duration-700
     "
-    
     id="navbar"
-    
   >
     <div class="flex justify-between items-center">
       <router-link to="/">
@@ -41,8 +39,7 @@
                 p-2.5
                 rounded-sm
                 text-sm
-                focus:outline-none
-                focus:ring-1 focus:ring-pink-600
+                focus:outline-none focus:ring-1 focus:ring-pink-600
               "
               placeholder="Tìm kiếm trên DuyShop"
             />
@@ -57,7 +54,9 @@
                   transition
                   hover:bg-pink-800
                   focus:outline-none
-                  focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50
+                  focus:ring-2
+                  focus:ring-pink-600
+                  focus:ring-opacity-50
                 "
                 type="submit"
               >
@@ -78,7 +77,9 @@
             transition
             hover:bg-pink-800
             focus:outline-none
-            focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50
+            focus:ring-2
+            focus:ring-pink-600
+            focus:ring-opacity-50
           "
         >
           <ShoppingCart />
@@ -127,18 +128,17 @@
 import ShoppingCart from "./icons/ShoppingCart.vue";
 import Search from "./icons/Search.vue";
 export default {
-  
   components: {
     ShoppingCart,
     Search,
   },
   created() {
-    this.onScroll()
+    this.onScroll();
   },
   methods: {
     onScroll: () => {
       let prevScrollpos = window.pageYOffset;
-      window.onscroll = function () {        
+      window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
           document.getElementById("navbar").style.top = "0";

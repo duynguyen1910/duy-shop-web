@@ -1,11 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import PrivacyPolicy from "../components/PrivacyPolicy.vue"
-import TermOfService from "../components/TermOfService.vue"
-import Products from "../views/Products.vue"
-
-
-
+import PrivacyPolicy from "../components/PrivacyPolicy.vue";
+import TermOfService from "../components/TermOfService.vue";
+import Products from "../views/Products.vue";
 
 const routes = [
   {
@@ -17,7 +14,7 @@ const routes = [
     path: "/register",
     name: "Register",
     meta: {
-      layout: "auth"
+      layout: "auth",
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -29,7 +26,7 @@ const routes = [
     path: "/login",
     name: "Login",
     meta: {
-      layout: "auth"
+      layout: "auth",
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -41,7 +38,7 @@ const routes = [
     path: "/privacy-policy",
     name: "PrivacyPolicy",
     meta: {
-      layout: "policy"
+      layout: "policy",
     },
     component: PrivacyPolicy,
   },
@@ -49,7 +46,7 @@ const routes = [
     path: "/term-of-service",
     name: "TermOfService",
     meta: {
-      layout: "policy"
+      layout: "policy",
     },
     component: TermOfService,
   },

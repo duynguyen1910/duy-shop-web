@@ -46,8 +46,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 transition
                 duration-300
                 rounded-sm
@@ -106,8 +105,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 transition
                 duration-300
                 rounded-sm
@@ -166,8 +164,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 transition
                 duration-300
                 rounded-sm
@@ -226,8 +223,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 transition
                 duration-300
                 rounded-sm
@@ -286,8 +282,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 rounded-sm
                 transform
                 hover:-translate-y-1
@@ -346,8 +341,7 @@
                 border-2
                 px-9
                 py-3.5
-                hover:bg-pink-600
-                hover:text-white
+                hover:bg-pink-600 hover:text-white
                 transition
                 duration-300
                 rounded-sm
@@ -370,5 +364,4 @@
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>

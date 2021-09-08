@@ -12,8 +12,7 @@
           rounded-xl
           overflow-hidden
           transform
-          hover:-rotate-2
-          hover:shadow-lg
+          hover:-rotate-2 hover:shadow-lg
           duration-700
           mr-4
         "
@@ -43,8 +42,7 @@
           rounded-xl
           overflow-hidden
           transform
-          hover:-rotate-2
-          hover:shadow-lg
+          hover:-rotate-2 hover:shadow-lg
           duration-700
           mx-4
         "
@@ -73,8 +71,7 @@
           rounded-xl
           overflow-hidden
           transform
-          hover:-rotate-2
-          hover:shadow-lg
+          hover:-rotate-2 hover:shadow-lg
           duration-700
           mx-4
         "
@@ -104,8 +101,7 @@
           rounded-xl
           overflow-hidden
           transform
-          hover:-rotate-2
-          hover:shadow-lg
+          hover:-rotate-2 hover:shadow-lg
           duration-700
           ml-4
         "
@@ -122,9 +118,9 @@
             thể đặt hàng mọi lúc, mọi nơi.
           </div>
           <div
-            class="flex items-center text-lg text-pink-600 font-bold mt-18.5 "
+            class="flex items-center text-lg text-pink-600 font-bold mt-18.5"
           >
-            <div class="mr-1.5 ">Xem thêm</div>
+            <div class="mr-1.5">Xem thêm</div>
             <i class="fas fa-arrow-right fa-sm text-pink-600"></i>
           </div>
         </div>
@@ -136,9 +132,3 @@
 <script>
 export default {};
 </script>
-
-
-
- 
-
-    

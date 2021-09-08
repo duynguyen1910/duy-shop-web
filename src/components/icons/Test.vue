@@ -8,15 +8,17 @@
 
 <script>
 export default {
-  data: {
-    message: "Click for slide",
-    show: true,
-    imgList: [
-      "http://via.placeholder.com/350x150",
-      "http://via.placeholder.com/350x151",
-      "http://via.placeholder.com/350x152",
-    ],
-    currentImg: 0,
+  data: function () {
+    return {
+      message: "Click for slide",
+      show: true,
+      imgList: [
+        "http://via.placeholder.com/350x150",
+        "http://via.placeholder.com/350x151",
+        "http://via.placeholder.com/350x152",
+      ],
+      currentImg: 0,
+    };
   },
   mounted() {
     setInterval(() => {

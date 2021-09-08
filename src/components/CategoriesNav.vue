@@ -201,7 +201,6 @@ export default {
     setInterval(() => {
       this.isRun = !this.isRun;
     }, 5000);
-    
   },
   created() {
     this.getAllCategories();

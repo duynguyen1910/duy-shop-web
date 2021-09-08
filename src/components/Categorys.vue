@@ -19,8 +19,7 @@
             duration-400
             ease-in-out
             transform
-            hover:-translate-y-1
-            hover:scale-110
+            hover:-translate-y-1 hover:scale-110
           "
         >
           <div class="flex justify-center">

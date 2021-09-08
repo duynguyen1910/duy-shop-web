@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigationHeader />
-    <slot/>
+    <slot />
     <NavigationBottom />
   </div>
 </template>
@@ -17,5 +17,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

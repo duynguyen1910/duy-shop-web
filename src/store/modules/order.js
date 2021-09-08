@@ -11,8 +11,8 @@ const orderModule = {
     addOrder: async (cart) => {
       await api.addOrder(cart);
     },
-    productOrdered: ({ commit }, {cart, total}) => {
-      console.log(total, cart)
+    productOrdered: ({ commit }, { cart, total }) => {
+      console.log(total, cart);
       commit("SET_PRODUCT_ORDERED", cart);
     },
   },

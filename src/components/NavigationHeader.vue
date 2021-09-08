@@ -10,7 +10,6 @@
           />
           <span class="text-gray-600 font-cursive text-2xl ml-0.5">Duy</span>
           <div class="text-pink-600 font-cursive text-2xl">Shop</div>
-          
         </div>
       </router-link>
       <div class="ml-24 flex">
@@ -57,6 +56,4 @@
 export default {};
 </script>
 
-<style>
-</style>
-
+<style></style>

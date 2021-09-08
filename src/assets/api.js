@@ -19,5 +19,5 @@ export default {
   },
   getAllCategogys: () => {
     return http.get("category");
-  }
-}
+  },
+};

@@ -54,8 +54,7 @@
                   w-full
                   text-sm
                   my-4
-                  focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:outline-none focus:ring-1 focus:ring-pink-400
                 "
                 type="number"
                 placeholder="Số điện thoại"
@@ -68,8 +67,7 @@
                   w-full
                   text-sm
                   my-4
-                  focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:outline-none focus:ring-1 focus:ring-pink-400
                 "
                 type="password"
                 placeholder="Mật khẩu"
@@ -88,7 +86,9 @@
                   hover:bg-pink-800
                   transition
                   focus:outline-none
-                  focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50
+                  focus:ring-2
+                  focus:ring-pink-600
+                  focus:ring-opacity-50
                 "
               >
                 Đăng ký
@@ -187,4 +187,3 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 </style>
-
