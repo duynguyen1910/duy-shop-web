@@ -1,34 +1,45 @@
 <template>
   <div>
-    <div class="bg-bgcontent px-80 pb-82 pt-35.75">
-      <Categorys class="mb-28" />
-      <Trending class="mb-28" />
+    <div class="bg px-80 pt-40 bg-cover bg-no-repeat bg-top bg-scroll">
+      <Slider class="mb-28"/>
+      <CategoriesNav class="mb-28" />
     </div>
-    <div class="-mt-83.5 px-80">
-      <RoomBuildForYou class="mb-28" />
-      <LogoFashion class="mb-28" />
+    <div class="bg-bgcontent py-20 px-80">
+      <RoomBuildForYou />
     </div>
-    <div class="bg-bgcontent px-80 mb-28">
-      <Sale />
+    <div class="px-80 my-28">
+      <LogoFashion class="" />
+    </div>
+    <div class="bg-trending py-20 mb-28">
+      <Trending class="px-80" />
     </div>
   </div>
 </template>
 
 <script>
-import Categorys from "../components/Categorys.vue";
-import Sale from "../components/Sale.vue";
+import CategoriesNav from "../components/CategoriesNav.vue";
 import Trending from "../components/Trending.vue";
 import RoomBuildForYou from "../components/RoomBuildForYou.vue";
 import LogoFashion from "../components/LogoFashion.vue";
+import Slider from "../components/Slider.vue";
 
 export default {
   name: "Home",
   components: {
-    Categorys,
-    Sale,
+    CategoriesNav,
     Trending,
     RoomBuildForYou,
     LogoFashion,
+    Slider
   },
 };
 </script>
+
+<style>
+.bg {
+  background-image: url("../../src/assets/images/fashion-images/background-category.jpeg");
+}
+.bg-trending {
+  background-image: url("../../src/assets/images/fashion-images/background-trending.jpeg");
+}
+</style>

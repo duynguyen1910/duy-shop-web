@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <NavigationHeader />
-    <slot />
-    <NavigationBottom />
-  </div>
+  <NavigationHeader />
+  <slot />
+  <NavigationBottom />
 </template>
 
 <script>

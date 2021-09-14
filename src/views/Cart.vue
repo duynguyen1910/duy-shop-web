@@ -45,7 +45,10 @@
                   p-2.5
                   rounded-sm
                   text-sm
-                  focus:border-pink-600 focus:ring-1 focus:ring-pink-600
+                  focus:border-pink-600
+                  focus:ring-1
+                  focus:ring-pink-600
+                  focus:outline-none
                   border-gray-200
                 "
                 placeholder="Tìm kiếm trên DuyShop"
@@ -151,7 +154,7 @@
                     </button>
                   </MenuItem>
                 </div>
-                <router-link to="/order">
+                <router-link to="/purchase">
                   <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
                       <button
@@ -160,12 +163,12 @@
                           'group flex rounded-md items-center w-full px-4 py-2 text-sm font-semibold',
                         ]"
                       >
-                        <ShoppingCart
+                        <Purchase
                           :active="active"
                           aria-hidden="true"
                           class="w-6 h-6 mr-2 text-pink-400"
                         />
-                        Đơn hàng
+                        Đơn mua
                       </button>
                     </MenuItem>
                   </div>
@@ -262,7 +265,7 @@
               class="rounded"
               width="100"
               height="100"
-              :src="'http://localhost:3100/uploads/' + item.product.images[0]"
+              :src="'http://localhost:3200/uploads/' + item.product.images[0]"
             />
             <div class="rounded-full py-1.5 px-3 text-green-600 bg-green-200">
               {{ item.product.name }}
@@ -552,10 +555,10 @@
 
 <script>
 import Search from "../components/icons/Search.vue";
+import Purchase from "../components/icons/Purchase.vue";
 import Trash from "../components/icons/Trash.vue";
 import User from "../components/icons/User.vue";
 import Logout from "../components/icons/Logout.vue";
-import ShoppingCart from "../components/icons/ShoppingCart.vue";
 import { mapActions, mapGetters } from "vuex";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 
@@ -565,11 +568,11 @@ export default {
     Trash,
     User,
     Logout,
-    ShoppingCart,
     Menu,
     MenuButton,
     MenuItems,
     MenuItem,
+    Purchase,
   },
   data() {
     return {

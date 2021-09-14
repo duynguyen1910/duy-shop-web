@@ -8,6 +8,7 @@ module.exports = {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
       cursive: ["Pacifico", "cursive"],
+      cursive1: ["Kalam", "cursive1"],
     },
     extend: {
       spacing: {
@@ -15,10 +16,12 @@ module.exports = {
         0: "0px",
         1.75: "7px",
         2.25: "9px",
+        5.5: "22px",
         8.5: "34px",
         12.5: "50px",
         18: "72px",
         18.5: "74px",
+        22: "88px",
         26.5: "106px",
         57: "228px",
         59: "236px",
@@ -32,6 +35,9 @@ module.exports = {
         144: "36rem",
 
         35.75: "143px",
+        316.25: "1265px",
+        155: "620px",
+
       },
       borderRadius: {
         "4xl": "2rem",
@@ -80,6 +86,8 @@ module.exports = {
     extend: {
       borderColor: ["focus-visible"],
       opacity: ["disabled"],
+      blur: ["group-hover", "focus"],
     },
   },
+  plugins: [require("@tailwindcss/forms")],
 };

@@ -13,4 +13,10 @@ export function registerGlobalComponents(app) {
     "policy-layout",
     defineAsyncComponent(() => import("../layouts/policy"))
   );
+  app.config.globalProperties.$filters = {
+    filterMoney: (money) => {
+      if (money) return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      return 0;
+    },
+  };
 }

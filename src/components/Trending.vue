@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="pt-24 pb-56 px-8 bg-titlecustom rounded-md shadow-3xl">
-      <div class="text-white text-3xl font-semibold mb-11 tracking-widest">
+    <div class="pb-56 px-8 ">
+      <div class="text-white text-3xl font-semibold mb-11">
         Theo kịp xu hướng cùng DuyShop
       </div>
     </div>
@@ -12,7 +12,7 @@
           rounded-xl
           overflow-hidden
           transform
-          hover:-rotate-2 hover:shadow-lg
+          hover:-rotate-2 hover:shadow-lg 
           duration-700
           mr-4
         "

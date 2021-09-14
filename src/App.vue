@@ -17,6 +17,7 @@ export default {
       layout: computed(() => (route.meta.layout || PUBLIC_LAYOUT) + "-layout"),
     };
   },
+  
 };
 </script>
 

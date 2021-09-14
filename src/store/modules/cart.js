@@ -38,6 +38,7 @@ const cartModule = {
         console.log(error);
       }
     },
+    
   },
   mutations: {
     SET_CART: (state, productList) => {
