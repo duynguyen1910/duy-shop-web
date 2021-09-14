@@ -22,7 +22,7 @@
             <div class="text-pink-600 font-cursive text-3xl">Shop</div>
           </div>
         </router-link>
-        <div class="text-3xl ml-7">Đăng ký</div>
+        <div class="text-3xl ml-7 font-semibold text-pink-600">Đăng ký</div>
       </div>
       <span class="text-pink-600 text-sm">Cần trợ giúp?</span>
     </div>
@@ -43,10 +43,11 @@
           />
         </div>
         <div>
-          <div class="border bg-white rounded-lg p-14 shadow-xl">
-            <form @submit.prevent="onSubmit">
-              <div class="text-3xl my-4">Đăng ký</div>
+          <div class="border bg-white rounded-lg w-123 p-16 shadow-xl">
+            <form @submit.prevent="onSubmit(user)">
+              <div class="text-3xl mb-4">Đăng ký</div>
               <input
+                v-model="user.fullName"
                 class="
                   border
                   rounded
@@ -55,12 +56,16 @@
                   text-sm
                   my-4
                   focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
                 "
-                type="number"
-                placeholder="Số điện thoại"
+                type="text"
+                placeholder="Họ và tên"
               />
               <input
+                v-model="user.email"
                 class="
                   border
                   rounded
@@ -69,11 +74,47 @@
                   text-sm
                   my-4
                   focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
+                "
+                type="email"
+                placeholder="Email"
+              />
+              <input
+                v-model="user.password"
+                class="
+                  border
+                  rounded
+                  p-2
+                  w-full
+                  text-sm
+                  my-4
+                  focus:outline-none
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
                 "
                 type="password"
                 placeholder="Mật khẩu"
               />
+              <!-- <input
+                v-validate="'required'"
+                ref="password"
+                class="
+                  border
+                  rounded
+                  p-2
+                  w-full
+                  text-sm
+                  my-4
+                  focus:outline-none focus:ring-1 focus:ring-pink-400
+                "
+                type="password"
+                placeholder="Nhập lại mật khẩu"
+              /> -->
               <button
                 type="submit"
                 class="
@@ -88,7 +129,9 @@
                   hover:bg-pink-800
                   transition
                   focus:outline-none
-                  focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50
+                  focus:ring-2
+                  focus:ring-pink-600
+                  focus:ring-opacity-50
                 "
               >
                 Đăng ký
@@ -98,7 +141,7 @@
                 <div class="uppercase px-3.5 text-xs text-gray-400">Hoặc</div>
                 <div class="w-full h-px bg-gray-400"></div>
               </div>
-              <div class="flex justify-between my-8">
+              <div class="flex justify-between my-6">
                 <button
                   class="
                     p-2
@@ -164,7 +207,7 @@
                   >
                 </div>
               </div>
-              <div class="my-4 text-center">
+              <div class="mt-4 text-center">
                 <span class="text-gray-400 text-sm mr-1"
                   >Bạn đã có tài khoản?</span
                 >
@@ -177,9 +220,101 @@
         </div>
       </div>
     </div>
+    <div
+      v-show="toaster"
+      class="
+        mt-28
+        fixed
+        inset-0
+        flex
+        items-end
+        justify-center
+        px-4
+        py-6
+        pointer-events-none
+        sm:p-6 sm:items-start sm:justify-end
+      "
+    >
+      <div
+        class="
+          max-w-sm
+          w-full
+          bg-white
+          shadow-lg
+          rounded-lg
+          pointer-events-auto
+        "
+      >
+        <div class="rounded-lg shadow-xs overflow-hidden">
+          <div class="py-4 px-6">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <svg
+                  class="h-6 w-6 text-green-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div class="ml-3 w-0 flex-1 pt-0.5 text-lg">
+                <p class="text-sm font-medium text-gray-900">
+                  Đăng kí tài khoản thành công
+                </p>
+                <router-link to="/login">
+                  <p class="mt-2.5 text-sm font-bold text-pink-600">
+                    Đăng Nhập
+                  </p></router-link
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+<script>
+import { mapActions, mapGetters } from "vuex";
+export default {
+  data: () => {
+    return {
+      toaster: false,
+      user: {
+        fullName: "",
+        email: "",
+        password: "",
+      },
+    };
+  },
+  computed: {
+    ...mapGetters({ mess: "getMessageRegisterSuccess" }),
+  },
+  methods: {
+    ...mapActions(["requestRegister"]),
+    async onSubmit(user) {
+      await this.requestRegister(user);
+      this.user.fullName = "";
+      this.user.email = "";
+      this.user.password = "";
 
+      if (this.mess) {
+        this.toaster = true;
+      }
+      setTimeout(() => {
+        this.toaster = false;
+      }, 5000);
+    },
+  },
+};
+</script>
 <style lang="css" scoped>
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -187,4 +322,3 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 </style>
-

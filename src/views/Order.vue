@@ -151,7 +151,7 @@
                     </button>
                   </MenuItem>
                 </div>
-                <router-link to="/order">
+                <router-link to="/purchase">
                   <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
                       <button
@@ -160,12 +160,12 @@
                           'group flex rounded-md items-center w-full px-4 py-2 text-sm font-semibold',
                         ]"
                       >
-                        <ShoppingCart
+                        <Purchase
                           :active="active"
                           aria-hidden="true"
                           class="w-6 h-6 mr-2 text-pink-400"
                         />
-                        Đơn hàng
+                        Đơn mua
                       </button>
                     </MenuItem>
                   </div>
@@ -195,27 +195,189 @@
       </div>
     </div>
     <div class="bg-bgcontent px-80 pb-82 pt-35.75">
-      <div class="bg-white">
+      <div class="space-y-8">
         <div
-          v-for="product in getProductOrdered"
-          :key="product._id"
-          class="flex"
+          class="
+            flex
+            items-center
+            bg-white
+            px-6
+            py-3
+            rounded
+            shadow
+            text-gray-600
+            font-semibold
+          "
         >
-          <div>
+          <div class="w-4/12 flex justify-center items-center">Sản Phẩm</div>
+          <div class="w-4/12 flex justify-center items-center">Số Lượng</div>
+          <div class="w-4/12 flex justify-center items-center">Số Tiền</div>
+        </div>
+        <div
+          v-for="product in getProductOrdered.cart"
+          :key="product._id"
+          class="
+            flex
+            justify-between
+            items-center
+            bg-white
+            text-pink-600
+            font-semibold
+            p-6
+            rounded-lg
+            shadow-lg
+          "
+        >
+          <div class="flex items-center w-4/12 justify-around">
             <img
               class="rounded"
               width="100"
               height="100"
               :src="
-                'http://localhost:3100/uploads/' + product.product.images[0]
+                'http://localhost:3200/uploads/' + product.product.images[0]
               "
             />
+            <div>
+              <div class="rounded-full py-1.5 px-3 text-green-600 bg-green-200">
+                {{ product.product.name }}
+              </div>
+            </div>
           </div>
-          <div>
-            {{ product.amount }}
+          <div class="flex justify-center items-center w-4/12">
+            <div class="text-yellow-600 bg-yellow-200 rounded-full py-1.5 px-3">
+              {{ product.amount }}
+            </div>
           </div>
-          <div>
-            {{ product.price }}
+
+          <div class="flex justify-center items-center w-4/12">
+            <div
+              class="
+                flex
+                text-lightBlue-600
+                bg-lightBlue-200
+                rounded-full
+                py-1.5
+                px-3
+              "
+            >
+              <span class="mr-0.5">₫</span>
+              <div>
+                {{
+                  $filters.filterMoney(
+                    product.product.promotionPrice
+                      ? product.product.promotionPrice
+                      : product.product.price * product.amount
+                  )
+                }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            flex
+            items-center
+            bg-white
+            text-gray-600
+            font-semibold
+            rounded
+            shadow-lg
+            border-t-1 border-gray-200
+            py-3
+            pl-6
+            pr-3
+            sticky
+            bottom-0
+            left-0
+            right-0
+            z-40
+            justify-end
+            space-x-3
+          "
+        >
+          <div class="text-pink-600 bg-pink-200 rounded-full py-1.5 px-3">
+            Tổng Thanh Toán:
+          </div>
+
+          <div class="flex text-pink-600 bg-pink-200 rounded-full py-1.5 px-3">
+            <span class="mr-0.5">₫</span>
+            <div>
+              {{ $filters.filterMoney(getProductOrdered.total) }}
+            </div>
+          </div>
+
+          <button
+            @click="onAddOrder"
+            class="
+              bg-pink-600
+              text-white
+              py-2.5
+              px-8
+              rounded
+              hover:bg-pink-800
+              transition
+              duration-200
+              focus:outline-none
+              focus:ring-2
+              focus:ring-pink-600
+              focus:ring-opacity-50
+            "
+          >
+            Đặt Hàng
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      v-show="toaster"
+      class="
+        mt-22
+        fixed
+        inset-0
+        flex
+        items-end
+        justify-center
+        px-4
+        py-6
+        pointer-events-none
+        sm:p-6 sm:items-start sm:justify-end
+      "
+    >
+      <div
+        class="
+          max-w-sm
+          w-full
+          bg-white
+          shadow-xl
+          rounded-lg
+          pointer-events-auto
+        "
+      >
+        <div class="rounded-lg shadow-xs overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <svg
+                  class="h-6 w-6 text-green-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div class="ml-3 w-0 flex-1 pt-0.5">
+                <p class="text-sm font-bold text-gray-900">
+                  Đơn Hàng Đã Được Tạo
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -225,24 +387,26 @@
 
 <script>
 import Search from "../components/icons/Search.vue";
+import Purchase from "../components/icons/Purchase.vue";
 import User from "../components/icons/User.vue";
 import Logout from "../components/icons/Logout.vue";
-import ShoppingCart from "../components/icons/ShoppingCart.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 export default {
   components: {
     Search,
     User,
     Logout,
-    ShoppingCart,
     Menu,
     MenuButton,
     MenuItems,
     MenuItem,
+    Purchase,
   },
   data() {
-    return {};
+    return {
+      toaster: false,
+    };
   },
   created() {},
   computed: {
@@ -256,7 +420,19 @@ export default {
       return "";
     },
   },
+  methods: {
+    ...mapActions(["addOrder", "productOrdered"]),
+    async onAddOrder() {
+      const cartId = [];
+      await this.getProductOrdered.cart.map((element) => {
+        cartId.push(element._id);
+        this.addOrder(cartId);
+      });
+      this.toaster = true;
+      setTimeout(() => {
+        this.toaster = false;
+      }, 3000);
+    },
+  },
 };
 </script>
-
-<style></style>

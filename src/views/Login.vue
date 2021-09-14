@@ -22,7 +22,7 @@
             <div class="text-pink-600 font-cursive text-3xl">Shop</div>
           </div>
         </router-link>
-        <div class="text-3xl ml-7">Đăng nhập</div>
+        <div class="text-3xl ml-7 font-semibold text-pink-600">Đăng nhập</div>
       </div>
       <span class="text-pink-600 text-sm">Cần trợ giúp?</span>
     </div>
@@ -44,9 +44,10 @@
         </div>
         <div>
           <div class="border bg-white rounded-lg p-16 shadow-xl">
-            <form @submit.prevent="onSubmit">
+            <form @submit.prevent="onSubmit(user)">
               <div class="text-3xl my-4">Đăng nhập</div>
               <input
+                v-model="user.email"
                 class="
                   border
                   rounded
@@ -55,12 +56,16 @@
                   text-sm
                   my-4
                   focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
                 "
-                type="text"
-                placeholder="Email/Số điện thoại/Đăng nhập"
+                type="email"
+                placeholder="Email"
               />
               <input
+                v-model="user.password"
                 class="
                   border
                   rounded
@@ -69,7 +74,10 @@
                   text-sm
                   my-4
                   focus:outline-none
-                  focus:ring-1 focus:ring-pink-400
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
                 "
                 type="password"
                 placeholder="Mật khẩu"
@@ -88,7 +96,9 @@
                   text-sm
                   hover:bg-pink-800
                   focus:outline-none
-                  focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50
+                  focus:ring-2
+                  focus:ring-pink-600
+                  focus:ring-opacity-50
                 "
               >
                 Đăng nhập
@@ -163,5 +173,92 @@
         </div>
       </div>
     </div>
+    <!-- failed toaster -->
+    <div
+      v-show="failedToaster"
+      class="
+        mt-22
+        fixed
+        inset-0
+        flex
+        items-end
+        justify-center
+        px-4
+        py-6
+        pointer-events-none
+        sm:p-6 sm:items-start sm:justify-end
+      "
+    >
+      <div
+        class="
+          max-w-sm
+          w-full
+          bg-white
+          shadow-xl
+          rounded-lg
+          pointer-events-auto
+        "
+      >
+        <div class="rounded-lg shadow-xs overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0">
+                <svg
+                  class="h-6 w-6 text-red-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="ml-3 w-0 flex-1 pt-0.5">
+                <p class="text-sm font-bold text-gray-900">
+                  {{ getMessageLoginFailed.message }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+<script>
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  data: () => {
+    return {
+      failedToaster: false,
+      user: {
+        email: "",
+        password: "",
+      },
+    };
+  },
+  computed: {
+    ...mapGetters(["getUserData", "getAuth", "getMessageLoginFailed"]),
+  },
+  methods: {
+    ...mapActions(["requestLogin"]),
+    async onSubmit(user) {
+      await this.requestLogin(user);
+      if (this.getAuth) {
+        this.$router.push("/");
+      } else {
+        this.failedToaster = true;
+        setTimeout(() => {
+          this.failedToaster = false;
+        }, 3000);
+      }
+      this.user.email = "";
+      this.user.password = "";
+    },
+  },
+};
+</script>

@@ -9,7 +9,7 @@
           Giới thiệu
         </div>
         <div class="text-base my">
-          <dd>  
+          <dd>
             Chào mừng bạn đến với nền tảng DuyShop.vn (bao gồm website và ứng
             dụng di động DuyShop) được được vận hành bởi Công ty TNHH DuyShop và
             các công ty liên kết (gọi riêng và gọi chung là, "DuyShop", "chúng
@@ -53,7 +53,9 @@
         </div>
       </li>
       <li class="mb-5">
-        <div class="uppercase font-bold text-gray-700 text-base mb-3">Cookies</div>
+        <div class="uppercase font-bold text-gray-700 text-base mb-3">
+          Cookies
+        </div>
         <div class="text-base">
           <dd>
             Đôi khi chúng tôi có thể sử dụng "cookie" hoặc các tính năng khác để

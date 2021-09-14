@@ -17,7 +17,7 @@
           <div v-for="image in product.images" :key="image.images">
             <img
               style="width: 302px; height: 258px"
-              :src="'http://localhost:3100/uploads/' + image"
+              :src="'http://localhost:3200/uploads/' + image"
               class="
                 rounded
                 block
@@ -51,7 +51,7 @@
                   text-white text-sm
                   py-2
                   px-7
-                  font-semibold
+                  font-medium
                   transition
                   duration-300
                   rounded-sm
@@ -71,7 +71,7 @@
             class="flex justify-between text-xs font-semibold text-orange-600"
           >
             <span>{{ categoriesBySlug.name }}</span>
-            <span class="flex space-x-0.5"
+            <span class="flex"
               ><Star class="text-gray-600" /> <Star class="text-gray-600" />
               <Star /> <Star /> <Star class="text-gray-600"
             /></span>

@@ -259,8 +259,8 @@
           Khi vận chuyển thành công đơn hàng, DuyShop sẽ thông báo đến Người Bán
           về việc đã nhận được tiền thanh toán từ phía Người Mua. Trừ trường hợp
           có thỏa thuận khác với DuyShop, Người Bán có trách nhiệm cung cấp đầy
-          đủ thông tin tài khoản ngân hàng để DuyShop tiến hành chuyển tiền thanh
-          toán cho đơn hàng đó.
+          đủ thông tin tài khoản ngân hàng để DuyShop tiến hành chuyển tiền
+          thanh toán cho đơn hàng đó.
         </dd>
         <dd>
           Người Bán phải luôn nỗ lực để đảm bảo Người Mua sẽ nhận được hàng đúng
@@ -272,8 +272,8 @@
           mua bảo hiểm hàng hóa, bao gồm cả việc vận chuyển. Trong trường hợp
           Hàng hóa được mua bị hư hỏng, thất lạc hoặc không chuyển phát được
           trong quá trình vận chuyển, Người Sử Dụng thừa nhận và đồng ý rằng
-          DuyShop sẽ không chịu trách nhiệm đối với bất kỳ tổn thất, chi phí, phí
-          tổn hoặc bất kỳ khoản phí nào phát sinh từ sự cố đó và Người Bán
+          DuyShop sẽ không chịu trách nhiệm đối với bất kỳ tổn thất, chi phí,
+          phí tổn hoặc bất kỳ khoản phí nào phát sinh từ sự cố đó và Người Bán
           và/hoặc Người Mua sẽ liên hệ với đơn vị vận chuyển để giải quyết sự cố
           đó.
         </dd>
@@ -307,9 +307,9 @@
         </dd>
         <dd>
           Nếu bạn dùng DuyShop Xu để thanh toán và được hoàn trả dựa trên Chính
-          Sách Trả Hàng và Hoàn Tiền của DuyShop, DuyShop sẽ tách biệt hoàn trả số
-          tiền bạn đã thanh toán cho món hàng đó và số DuyShop Xu bạn đã dùng vào
-          Tài Khoản của bạn.
+          Sách Trả Hàng và Hoàn Tiền của DuyShop, DuyShop sẽ tách biệt hoàn trả
+          số tiền bạn đã thanh toán cho món hàng đó và số DuyShop Xu bạn đã dùng
+          vào Tài Khoản của bạn.
         </dd>
       </li>
     </ol>
