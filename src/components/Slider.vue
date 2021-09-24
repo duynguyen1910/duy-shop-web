@@ -1,12 +1,7 @@
 <template>
   <div class="relative">
-    <div>
-      <div v-for="i in [currentIndex]" :key="i">
-        <img
-          :src="currentImg"
-          class="w-full h-155 rounded-xl shadow-2xl select-none"
-        />
-      </div>
+    <div v-for="i in [currentIndex]" :key="i">
+      <img :src="currentImg" class="w-full h-188 shadow-2xl select-none" />
     </div>
     <div
       v-if="currentImg"
@@ -52,7 +47,7 @@
           }"
           class="
             text-8xl text-pink-600
-            font-bold
+            font-black
             transform
             transition
             duration-700
@@ -161,7 +156,7 @@
           }"
           class="
             text-8xl text-violet-600
-            font-bold
+            font-black
             transform
             transition
             duration-700
@@ -261,7 +256,7 @@
             delay-200
           "
         >
-          <span>Saving is now your Duty</span>
+          <span>Spread The Passion To Everyone</span>
         </div>
         <div
           :class="{
@@ -270,7 +265,7 @@
           }"
           class="
             text-8xl text-orange-600
-            font-bold
+            font-black
             transform
             transition
             duration-700
@@ -282,7 +277,7 @@
             ease-in-out
           "
         >
-          <span>SAVING</span>
+          <span>PASSION</span>
         </div>
         <div
           class="
@@ -305,7 +300,7 @@
               Math.abs(currentIndex) % this.images.length === 2,
           }"
         >
-          <span>SAVING IS NOW YOUR</span>
+          <span>LET'S GO</span>
         </div>
         <div class="flex justify-center items-center">
           <button
@@ -379,7 +374,7 @@
           }"
           class="
             text-8xl text-blue-600
-            font-bold
+            font-black
             transform
             transition
             duration-700
@@ -459,7 +454,7 @@
         duration-700
         ease-in-out
         select-none
-        rounded-r-lg
+        rounded-r-md
         hover:bg-pink-600
       "
       @click="prev"
@@ -481,7 +476,7 @@
         duration-700
         ease-in-out
         select-none
-        rounded-l-lg
+        rounded-l-md
         hover:bg-pink-600
       "
       @click="next"
@@ -498,9 +493,9 @@ export default {
   data() {
     return {
       images: [
-        "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "https://www.businessprocessincubator.com/wp-content/uploads/thumbnails/thumbnail-127401.jpg",
-        "https://images.pexels.com/photos/6719878/pexels-photo-6719878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images6.alphacoders.com/108/thumb-1920-1087020.jpg",
+        "https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://wallpapercave.com/wp/wp6272598.jpg",
         "https://images.pexels.com/photos/227433/pexels-photo-227433.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       ],
       timer: null,
@@ -524,6 +519,7 @@ export default {
     prev() {
       this.currentIndex -= 1;
     },
+    changeSlideByBtn() {},
   },
 
   computed: {

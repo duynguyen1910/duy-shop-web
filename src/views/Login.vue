@@ -22,7 +22,7 @@
             <div class="text-pink-600 font-cursive text-3xl">Shop</div>
           </div>
         </router-link>
-        <div class="text-3xl ml-7 font-semibold text-pink-600">Đăng nhập</div>
+        <div class="text-3xl ml-7 font-semibold text-pink-600">Login</div>
       </div>
       <span class="text-pink-600 text-sm">Cần trợ giúp?</span>
     </div>
@@ -45,7 +45,7 @@
         <div>
           <div class="border bg-white rounded-lg p-16 shadow-xl">
             <form @submit.prevent="onSubmit(user)">
-              <div class="text-3xl my-4">Đăng nhập</div>
+              <div class="text-3xl my-4">Login</div>
               <input
                 v-model="user.email"
                 class="
@@ -80,7 +80,7 @@
                   border-gray-200
                 "
                 type="password"
-                placeholder="Mật khẩu"
+                placeholder="Password"
               />
               <button
                 type="submit"
@@ -101,15 +101,15 @@
                   focus:ring-opacity-50
                 "
               >
-                Đăng nhập
+                Login
               </button>
               <div class="flex justify-between">
-                <a class="text-blue-500 text-xs" href="">Quên mật khẩu</a>
-                <a class="text-blue-500 text-xs" href="">Đăng nhập bằng SMS</a>
+                <a class="text-blue-500 text-xs" href="">Forgot password</a>
+                <a class="text-blue-500 text-xs" href="">Login by sms</a>
               </div>
               <div class="flex items-center mt-2">
                 <div class="w-full h-px bg-gray-400"></div>
-                <div class="uppercase px-3.5 text-xs text-gray-400">Hoặc</div>
+                <div class="uppercase px-3.5 text-xs text-gray-400">Or</div>
                 <div class="w-full h-px bg-gray-400"></div>
               </div>
               <div class="flex justify-between my-8">
@@ -162,10 +162,10 @@
               </div>
               <div class="my-4 text-center">
                 <span class="text-gray-400 text-sm mr-1"
-                  >Bạn chưa biết đến DuyShop?</span
+                  >You do not know DuyShop?</span
                 >
                 <router-link to="/register" class="text-pink-600 text-sm"
-                  >Đăng ký</router-link
+                  >Sign up</router-link
                 >
               </div>
             </form>
