@@ -15,7 +15,7 @@ export function registerGlobalComponents(app) {
   );
   app.config.globalProperties.$filters = {
     filterMoney: (money) => {
-      if (money) return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      if (money) return money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
       return 0;
     },
   };

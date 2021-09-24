@@ -2,6 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: 'media',
   theme: {
     colors,
     fontFamily: {
@@ -14,6 +15,9 @@ module.exports = {
       spacing: {
         // "1": "4px"
         0: "0px",
+        0.625: "2.5px",
+        0.75: "3px",
+        1.25: "5px",
         1.75: "7px",
         2.25: "9px",
         5.5: "22px",
@@ -22,28 +26,31 @@ module.exports = {
         18: "72px",
         18.5: "74px",
         22: "88px",
+        25.75: "103px",
         26.5: "106px",
+        42: "168px",
+        55: "220px",
         57: "228px",
         59: "236px",
         82: "328px",
         83.5: "334px",
         58.5: "234px",
         63.5: "254px",
-
         86.5: "346px",
+        90: "360px",
+        110: "440px",
         128: "32rem",
         144: "36rem",
-
         35.75: "143px",
         316.25: "1265px",
-        155: "620px",
-
+        188: "752px",
       },
       borderRadius: {
         "4xl": "2rem",
       },
       borderWidth: {
         1: "1px",
+        1.5: "1.5px",
       },
       backgroundColor: ["active"],
       colors: {
@@ -57,6 +64,7 @@ module.exports = {
         whitecustom: "#bec3cd",
         bgcontent: "#f5f5f5",
         graycustom1: "#4a4d55",
+        textproduct: "#9B9B9B",
         "gray-85-custom": "rgba(74, 77, 85, 0.85)",
       },
       boxShadow: {
@@ -87,6 +95,7 @@ module.exports = {
       borderColor: ["focus-visible"],
       opacity: ["disabled"],
       blur: ["group-hover", "focus"],
+      scale: ["active", "group-hover"],
     },
   },
   plugins: [require("@tailwindcss/forms")],

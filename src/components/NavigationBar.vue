@@ -1,12 +1,11 @@
 <template>
   <div
-    :class="{ 'transform -translate-y-full': !isShowNav }"
     class="
+    fixed
       px-80
       py-3
       bg-bgcontent
       p-1
-      fixed
       top-0
       left-0
       right-0
@@ -45,7 +44,7 @@
                 focus:border-pink-600
                 border-gray-200
               "
-              placeholder="Tìm kiếm trên DuyShop"
+              placeholder="Search..."
             />
             <div class="absolute inset-y-0 right-0 p-1">
               <button
@@ -187,7 +186,7 @@
                         aria-hidden="true"
                         class="w-6 h-6 mr-2 text-pink-400"
                       />
-                      Hồ sơ
+                      Profile
                     </button>
                   </MenuItem>
                 </div>
@@ -205,7 +204,7 @@
                           aria-hidden="true"
                           class="w-6 h-6 mr-2 text-pink-400"
                         />
-                        Đơn mua
+                        Purchase
                       </button>
                     </MenuItem>
                   </div>
@@ -224,7 +223,7 @@
                         aria-hidden="true"
                         class="w-6 h-6 mr-2 text-pink-400"
                       />
-                      Đăng xuất
+                      Sign out
                     </button>
                   </MenuItem>
                 </div>
@@ -285,27 +284,12 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 export default {
   data() {
     return {
-      isShowNav: true,
+      onScroll: false,
     };
   },
   mounted() {
-    this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", this.onScroll);
-    if (prevScrollpos === 0) {
-      this.isShowNav = true;
-    }
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = () => {
-      let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        this.isShowNav = true;
-      } else {
-        this.isShowNav = false;
-      }
-      prevScrollpos = currentScrollPos;
-    };
+    document.addEventListener("scroll", this.handleScroll);
   },
-
   components: {
     ShoppingCart,
     Search,
@@ -330,10 +314,15 @@ export default {
   },
   created() {
     this.getCart();
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     ...mapActions(["getCart"]),
-   
+    handleScroll() {
+      if (window.scrollY > 300) {
+        this.onScroll = !this.onScroll;
+      }
+    },
   },
 };
 </script>

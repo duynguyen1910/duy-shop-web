@@ -4,7 +4,6 @@ import Home from "../views/Home.vue";
 import PrivacyPolicy from "../components/PrivacyPolicy.vue";
 import TermOfService from "../components/TermOfService.vue";
 import Product from "../views/Products.vue";
-import Categories from "../views/Categories.vue";
 import Cart from "../views/Cart.vue";
 import Order from "../views/Order.vue";
 import Purchase from "../views/Purchase.vue";
@@ -61,11 +60,6 @@ const routes = [
     component: TermOfService,
   },
   {
-    path: "/categories/:slug",
-    name: "Categories",
-    component: Categories,
-  },
-  {
     path: "/products/:slug",
     name: "Product",
     component: Product,
@@ -73,9 +67,6 @@ const routes = [
   {
     path: "/cart",
     name: "Cart",
-    meta: {
-      layout: "auth",
-    },
     component: Cart,
   },
   {

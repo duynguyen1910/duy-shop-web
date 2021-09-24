@@ -11,6 +11,7 @@ const cartModule = {
   },
   actions: {
     addToCart: async (state, product) => {
+      console.log(product);
       try {
         if (window.localStorage.getItem("token")) {
           await api.addToCart(product);
@@ -38,7 +39,6 @@ const cartModule = {
         console.log(error);
       }
     },
-    
   },
   mutations: {
     SET_CART: (state, productList) => {

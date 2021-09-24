@@ -1,127 +1,66 @@
 <template>
-  <div class="px-80">
-    <div class="flex justify-between mt-11">
-      <div>
-        <div class="text-gray-500 font-semibold text-sm my-5 uppercase">
-          Thanh toán
+  <div class="px-80 flex justify-between items-center py-28">
+    <div class="space-y-8">
+      <span class="text-gray-600 font-cursive text-2xl ml-0.5">Duy</span>
+      <span class="text-pink-600 font-cursive text-2xl">Shop</span>
+      <div class="border-b-1 text-sm pb-4">
+        <div>
+          <span class="text-gray-900 mr-4">Weekdays:</span>
+          <span class="text-gray-500">08:00am - 08:00pm</span>
         </div>
-        <div class="grid grid-rows-2 grid-flow-col gap-4">
-          <img src="../assets/images/footers/mb.png" width="80" height="80" />
-          <img
-            src="../assets/images/footers/visa.jpeg"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/vietcombank.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/tra-gop.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/vietin.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/sacombank.png"
-            width="80"
-            height="80"
-          />
+        <div>
+          <span class="text-gray-900 mr-4">Weekends:</span>
+          <span class="text-gray-500">10:00am - 06:00pm</span>
         </div>
       </div>
-      <div>
-        <div class="text-gray-500 font-semibold text-sm my-5 uppercase">
-          Đơn vị vận chuyển
+      <div class="text-sm flex">
+        <span class="text-gray-900 mr-4">Get Social</span>
+        <div class="flex justify-between items-center space-x-3">
+          <i class="fab fa-telegram-plane"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-f"></i>
         </div>
-        <div class="grid grid-rows-2 grid-flow-col gap-4">
-          <img
-            src="../assets/images/footers/best-express.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/vietnam-post.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/grab-express.png"
-            width="80"
-            height="80"
-          />
-          <img src="../assets/images/footers/jt.png" width="80" height="80" />
-          <img
-            src="../assets/images/footers/ghn-express.png"
-            width="80"
-            height="80"
-          />
-          <img
-            src="../assets/images/footers/viettel-post.jpeg"
-            width="80"
-            height="80"
-          />
-        </div>
-      </div>
-      <div>
-        <div class="text-gray-500 font-semibold text-sm my-5 uppercase">
-          Theo dõi chúng tôi trên
-        </div>
-        <a class="flex items-center mb-2.5" href="https://www.facebook.com">
-          <i class="fab fa-facebook-square fa-lg text-gray-600 rounded-lg"></i>
-          <div class="ml-2.5 text-sm text-gray-500 rounded-lg">Facebook</div>
-        </a>
-        <a class="flex items-center" href="https://www.instagram.com/">
-          <i class="fab fa-instagram-square fa-lg text-gray-600"></i>
-          <div class="ml-2.5 text-sm text-gray-500">Instagram</div>
-        </a>
       </div>
     </div>
-    <div class="mt-11">
-      <div
-        class="text-center text-gray-500 font-semibold text-sm uppercase my-3"
-      >
-        Chứng nhận
+    <div>
+      <span class="text-2xl font-semibold text-gray-800">CONTACTS</span>
+      <div class="text-sm space-y-4 mt-8">
+        <div class="flex">
+          <span class="mr-4"><Location class="text-pink-600" /></span>
+          <span
+            >3, Trung Son Residential Area, Binh Chach District,
+            <br />
+            Ho Chi Minh City, Viet Nam</span
+          >
+        </div>
+        <div class="flex">
+          <span class="mr-4">
+            <Phone class="text-pink-600" />
+          </span>
+          <span>(+84) 923426248</span>
+        </div>
+        <div class="flex">
+          <span class="mr-4">
+            <Symbol class="text-pink-600" />
+          </span>
+          <span>duynguyen@gmail.com</span>
+        </div>
       </div>
-      <div class="flex justify-between">
-        <img
-          src="../assets/images/footers/bo-cong-thuong.png"
-          width="200"
-          height="200"
-        />
-        <img
-          src="../assets/images/footers/notifi-bo-cong-thuong.png"
-          width="200"
-          height="200"
-        />
-        <img
-          src="../assets/images/footers/bo-cong-thuong.png"
-          width="200"
-          height="200"
-        />
-      </div>
-    </div>
-    <div class="text-gray-500 text-xs text-center mt-11 mb-8">
-      <div>
-        Địa chỉ: Số 45, đường số 3, khu dân cư Trung Sơn, xã Bình Hưng, huyện
-        Bình Chánh, thành phố Hồ Chí Minh, Việt Nam. Tổng đài hỗ trợ: 0923436348
-        - Email: duynguyen@innoria.com
-      </div>
-      <div>
-        Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Tấn Duy - Điện thoại liên hệ:
-        0923436348
-      </div>
-      <div>© 2021 - Bản quyền thuộc về Công ty TNHH DuyShop</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import Location from "./icons/Location.vue";
+import Phone from "./icons/Phone.vue";
+import Symbol from "./icons/Symbol.vue";
+export default {
+  components: {
+    Location,
+    Phone,
+    Symbol,
+  },
+};
 </script>
 
 <style></style>

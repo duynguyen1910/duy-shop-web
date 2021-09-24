@@ -47,4 +47,7 @@ export default {
   addOrder: (cart) => {
     return http.post("order", cart);
   },
+  getMyOrder: () => {
+    return http.get("order");
+  },
 };
