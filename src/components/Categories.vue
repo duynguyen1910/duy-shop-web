@@ -46,7 +46,7 @@
         mb-10
         px-96
         transition
-        delay-300
+        delay-100
         transform
         duration-700
         ease-in-out
@@ -160,12 +160,6 @@
             absolute
             inset-0
             group
-            opacity-0
-            scale-0
-            hover:opacity-100 hover:scale-100
-            transition
-            duration-500
-            delay-100
             flex
             items-center
             justify-around
@@ -174,7 +168,20 @@
           "
         >
           <router-link :to="'/products/' + product.slug">
-            <div class="p-3 rounded-full bg-sky-400">
+            <div
+              class="
+                p-3
+                rounded-full
+                bg-sky-400
+                mr-24
+                transform
+                opacity-0
+                delay-200
+                group-hover:translate-x-18 group-hover:opacity-100
+                transition
+                duration-300
+              "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5 text-white"
@@ -191,23 +198,23 @@
           </router-link>
           <router-link to="/cart">
             <button
-              class="p-3 rounded-full bg-green-400 transform"
+              class="
+                p-3
+                rounded-full
+                bg-green-400
+                delay-200
+                ml-24
+                transform
+                opacity-0
+                group-hover:-translate-x-18 group-hover:opacity-100
+                transition
+                duration-300
+              "
               @click="onAddToCart(product._id)"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg></button
+              <span class="flex justify-center items-center w-5 h-5"
+                ><i class="fas fa-cart-plus text-white"></i
+              ></span></button
           ></router-link>
         </div>
       </div>
@@ -257,7 +264,7 @@ export default {
       }
     },
     handleScroll() {
-      if (window.scrollY > 1100) {
+      if (window.scrollY > 1300) {
         this.isScale = true;
       }
     },

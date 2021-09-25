@@ -85,7 +85,17 @@
               opacity-0
             "
           >
-            <div class="p-4 rounded-full bg-amber-300 text-gray-800">
+            <div
+              class="
+                p-4
+                rounded-full
+                bg-amber-300
+                text-gray-800
+                hover:text-white hover:bg-pink-600
+                transition
+                duration-300
+              "
+            >
               <ArrowRight />
             </div>
             <div>

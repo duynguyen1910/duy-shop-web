@@ -9,10 +9,6 @@ export function registerGlobalComponents(app) {
     "default-layout",
     defineAsyncComponent(() => import("../layouts/default"))
   );
-  app.component(
-    "policy-layout",
-    defineAsyncComponent(() => import("../layouts/policy"))
-  );
   app.config.globalProperties.$filters = {
     filterMoney: (money) => {
       if (money) return money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

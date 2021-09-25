@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "../store";
 import Home from "../views/Home.vue";
-import PrivacyPolicy from "../components/PrivacyPolicy.vue";
-import TermOfService from "../components/TermOfService.vue";
 import Product from "../views/Products.vue";
 import Cart from "../views/Cart.vue";
 import Order from "../views/Order.vue";
@@ -42,22 +40,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
-  },
-  {
-    path: "/privacy-policy",
-    name: "PrivacyPolicy",
-    meta: {
-      layout: "policy",
-    },
-    component: PrivacyPolicy,
-  },
-  {
-    path: "/term-of-service",
-    name: "TermOfService",
-    meta: {
-      layout: "policy",
-    },
-    component: TermOfService,
   },
   {
     path: "/products/:slug",

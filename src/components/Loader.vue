@@ -1,37 +1,5 @@
 <template>
   <div>
-    <!-- <section
-      class="flex flex-wrap w-full py-8 justify-center items-center space-x-4"
-    >
-      <div
-        class="
-          bg-indigo-500
-          flex
-          items-center
-          text-indigo-50
-          font-semibold
-          p-4
-          rounded
-        "
-      >
-        <svg
-          class="animate-spin h-5 w-5 mr-3"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-          />
-        </svg>
-        Loading...
-      </div>
-    </section> -->
-    <!-- about -->
     <div class="about">
       <a
         class="bg_links social portfolio"
@@ -56,8 +24,6 @@
       </a>
       <a class="bg_links logo"></a>
     </div>
-    <!-- end about -->
-
     <div class="content">
       <div class="loading">
         <p>loading</p>
@@ -199,7 +165,7 @@ body {
 .content {
   width: 100%;
   height: 100vh;
-  background-color: #171f30;
+  background-color: #fae8ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,10 +179,10 @@ body {
   top: 0;
   padding: 0;
   margin: 0;
-  color: #5389a6;
+  color: #db2777;
   font-family: "Oxygen", sans-serif;
   animation: text 3.5s ease both infinite;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 @keyframes text {
@@ -242,7 +208,7 @@ body {
   }
 }
 .content .loading span {
-  background-color: #5389a6;
+  background-color: #db2777;
   border-radius: 50px;
   display: block;
   height: 16px;
@@ -257,7 +223,7 @@ body {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #a6dcee;
+  background-color: #e072b6;
   border-radius: inherit;
   animation: loading2 3.5s ease both infinite;
 }

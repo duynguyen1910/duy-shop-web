@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  darkMode: 'media',
+  darkMode: "media",
   theme: {
     colors,
     fontFamily: {
@@ -96,6 +96,7 @@ module.exports = {
       opacity: ["disabled"],
       blur: ["group-hover", "focus"],
       scale: ["active", "group-hover"],
+      translate: ['active', 'group-hover'],
     },
   },
   plugins: [require("@tailwindcss/forms")],
