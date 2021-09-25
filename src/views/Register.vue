@@ -22,9 +22,9 @@
             <div class="text-pink-600 font-cursive text-3xl">Shop</div>
           </div>
         </router-link>
-        <div class="text-3xl ml-7 font-semibold text-pink-600">Đăng ký</div>
+        <div class="text-3xl ml-7 font-semibold text-pink-600">Sign Up</div>
       </div>
-      <span class="text-pink-600 text-sm">Cần trợ giúp?</span>
+      <span class="text-pink-600 text-sm">Need help?</span>
     </div>
     <div class="mx-auto px-80 bg-violetcustoms">
       <div class="w-full h-full flex justify-center items-center">
@@ -42,10 +42,10 @@
             src="../assets/images/logos/layout-auth.jpg"
           />
         </div>
-        <div>
-          <div class="border bg-white rounded-lg w-123 p-16 shadow-xl">
+        <div class="p-16">
+          <div class="border bg-white rounded-lg w-123 p-20 shadow-xl">
             <form @submit.prevent="onSubmit(user)">
-              <div class="text-3xl mb-4">Đăng ký</div>
+              <div class="text-3xl mb-4">Sign Up</div>
               <input
                 v-model="user.fullName"
                 class="
@@ -62,7 +62,7 @@
                   border-gray-200
                 "
                 type="text"
-                placeholder="Họ và tên"
+                placeholder="Full name"
               />
               <input
                 v-model="user.email"
@@ -98,23 +98,8 @@
                   border-gray-200
                 "
                 type="password"
-                placeholder="Mật khẩu"
+                placeholder="Password"
               />
-              <!-- <input
-                v-validate="'required'"
-                ref="password"
-                class="
-                  border
-                  rounded
-                  p-2
-                  w-full
-                  text-sm
-                  my-4
-                  focus:outline-none focus:ring-1 focus:ring-pink-400
-                "
-                type="password"
-                placeholder="Nhập lại mật khẩu"
-              /> -->
               <button
                 type="submit"
                 class="
@@ -134,11 +119,11 @@
                   focus:ring-opacity-50
                 "
               >
-                Đăng ký
+                Sign up
               </button>
               <div class="flex items-center mt-2">
                 <div class="w-full h-px bg-gray-400"></div>
-                <div class="uppercase px-3.5 text-xs text-gray-400">Hoặc</div>
+                <div class="uppercase px-3.5 text-xs text-gray-400">Or</div>
                 <div class="w-full h-px bg-gray-400"></div>
               </div>
               <div class="flex justify-between my-6">
@@ -189,30 +174,12 @@
                   <div class="text-white text-sm">Google</div>
                 </button>
               </div>
-              <div class="my-2 text-center text-xs">
-                <span class="text-gray-400"
-                  >Bằng việc đăng kí, bạn đã đồng ý với DuyShop về</span
-                >
-                <div>
-                  <router-link to=" /term-of-service"
-                    ><span class="text-pink-600"
-                      >Điều khoản dịch vụ</span
-                    ></router-link
-                  >
-                  <span class="text-gray-400 mx-1">và</span>
-                  <router-link to="/privacy-policy"
-                    ><span class="text-pink-600"
-                      >Chính sách bảo mật</span
-                    ></router-link
-                  >
-                </div>
-              </div>
               <div class="mt-4 text-center">
                 <span class="text-gray-400 text-sm mr-1"
-                  >Bạn đã có tài khoản?</span
+                  >Do you already have an account?</span
                 >
                 <router-link to="/login" class="text-pink-600 text-sm"
-                  >Đăng nhập</router-link
+                  >Login</router-link
                 >
               </div>
             </form>
@@ -266,11 +233,11 @@
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5 text-lg">
                 <p class="text-sm font-medium text-gray-900">
-                  Đăng kí tài khoản thành công
+                  Successful account registration
                 </p>
                 <router-link to="/login">
                   <p class="mt-2.5 text-sm font-bold text-pink-600">
-                    Đăng Nhập
+                    Login
                   </p></router-link
                 >
               </div>

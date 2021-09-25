@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-    fixed
+      fixed
       px-80
       py-3
       bg-bgcontent
@@ -9,7 +9,7 @@
       top-0
       left-0
       right-0
-      z-50
+      z-10
       border-b-1
       shadow-sm
       duration-700
@@ -285,10 +285,12 @@ export default {
   data() {
     return {
       onScroll: false,
+      
     };
   },
   mounted() {
     document.addEventListener("scroll", this.handleScroll);
+    
   },
   components: {
     ShoppingCart,

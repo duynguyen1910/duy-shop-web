@@ -24,7 +24,7 @@
         </router-link>
         <div class="text-3xl ml-7 font-semibold text-pink-600">Login</div>
       </div>
-      <span class="text-pink-600 text-sm">Cần trợ giúp?</span>
+      <span class="text-pink-600 text-sm">Need help?</span>
     </div>
     <div class="mx-auto px-80 bg-violetcustoms">
       <div class="w-full h-full flex justify-center items-center">
@@ -45,7 +45,7 @@
         <div>
           <div class="border bg-white rounded-lg p-16 shadow-xl">
             <form @submit.prevent="onSubmit(user)">
-              <div class="text-3xl my-4">Login</div>
+              <div class="text-3xl my-3">Login</div>
               <input
                 v-model="user.email"
                 class="
@@ -160,7 +160,7 @@
                   <div class="text-white text-sm">Google</div>
                 </button>
               </div>
-              <div class="my-4 text-center">
+              <div class="my-3 text-center">
                 <span class="text-gray-400 text-sm mr-1"
                   >You do not know DuyShop?</span
                 >
@@ -218,7 +218,7 @@
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-bold text-gray-900">
-                  {{ getMessageLoginFailed.message }}
+                Login failed incorrect username or password !!!
                 </p>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUserData", "getAuth", "getMessageLoginFailed"]),
+    ...mapGetters(["getUserData", "getAuth"]),
   },
   methods: {
     ...mapActions(["requestLogin"]),

@@ -1,17 +1,16 @@
 <template>
   <div>
     <div class="pt-25.75">
-      <Slider/>
+      <Slider />
     </div>
     <div class="px-80">
-      <AboutUs/>
+      <AboutUs />
     </div>
     <div class="bg-bgcontent py-20 px-80">
       <Making />
     </div>
     <div class="px-80">
-      <Categories/>
-      <Blog/>
+      <Categories />
     </div>
   </div>
 </template>
@@ -21,7 +20,7 @@ import Categories from "../components/Categories.vue";
 import Making from "../components/Making.vue";
 import Slider from "../components/Slider.vue";
 import AboutUs from "../components/AboutUs.vue";
-import Blog from "../components/Blog.vue";
+// import Blog from "../components/Blog.vue";
 export default {
   name: "Home",
   components: {
@@ -29,7 +28,6 @@ export default {
     Making,
     Slider,
     AboutUs,
-    Blog
   },
 };
 </script>
