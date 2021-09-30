@@ -218,7 +218,7 @@
               </div>
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <p class="text-sm font-bold text-gray-900">
-                Login failed incorrect username or password !!!
+                  Login failed incorrect username or password !!!
                 </p>
               </div>
             </div>
@@ -250,14 +250,14 @@ export default {
       await this.requestLogin(user);
       if (this.getAuth) {
         this.$router.push("/");
+        this.user.email = "";
+        this.user.password = "";
       } else {
         this.failedToaster = true;
         setTimeout(() => {
           this.failedToaster = false;
         }, 3000);
       }
-      this.user.email = "";
-      this.user.password = "";
     },
   },
 };

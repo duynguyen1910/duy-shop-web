@@ -43,10 +43,12 @@
         <div class="flex">
           <div class="space-y-7">
             <div class="border-2 rounded p-5 w-110 h-110">
-              <img
-                v-if="currentImg"
-                :src="'http://localhost:3200/uploads/' + currentImg"
-              />
+              <transition name="fade">
+                <img
+                  v-if="currentImg"
+                  :src="'http://localhost:3200/uploads/' + currentImg"
+                />
+              </transition>
             </div>
             <div class="flex items-center justify-center space-x-7">
               <div
@@ -235,7 +237,7 @@
                   </p>
                   <router-link to="/cart">
                     <p class="mt-2.5 text-sm font-bold text-pink-600">
-                      Go to Cart 
+                      Go to Cart
                     </p></router-link
                   >
                 </div>
@@ -307,5 +309,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .bg {
   background-image: url("../assets/images/products/bg.jpeg");
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

@@ -42,8 +42,8 @@
             src="../assets/images/logos/layout-auth.jpg"
           />
         </div>
-        <div class="p-16">
-          <div class="border bg-white rounded-lg w-123 p-20 shadow-xl">
+        <div class="p-24">
+          <div class="border bg-white rounded-lg w-123 p-14 shadow-xl">
             <form @submit.prevent="onSubmit(user)">
               <div class="text-3xl mb-4">Sign Up</div>
               <input
@@ -100,6 +100,24 @@
                 type="password"
                 placeholder="Password"
               />
+              <input
+                v-model="user.password"
+                class="
+                  border
+                  rounded
+                  p-2
+                  w-full
+                  text-sm
+                  my-4
+                  focus:outline-none
+                  focus:ring-1
+                  focus:ring-pink-400
+                  focus:border-pink-600
+                  border-gray-200
+                "
+                type="password"
+                placeholder="Repeat your password"
+              />
               <button
                 type="submit"
                 class="
@@ -121,12 +139,12 @@
               >
                 Sign up
               </button>
-              <div class="flex items-center mt-2">
+              <div class="flex items-center mt-1">
                 <div class="w-full h-px bg-gray-400"></div>
                 <div class="uppercase px-3.5 text-xs text-gray-400">Or</div>
                 <div class="w-full h-px bg-gray-400"></div>
               </div>
-              <div class="flex justify-between my-6">
+              <div class="flex justify-between my-4">
                 <button
                   class="
                     p-2
@@ -174,7 +192,7 @@
                   <div class="text-white text-sm">Google</div>
                 </button>
               </div>
-              <div class="mt-4 text-center">
+              <div class="mt-2 text-center">
                 <span class="text-gray-400 text-sm mr-1"
                   >Do you already have an account?</span
                 >

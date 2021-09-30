@@ -176,7 +176,7 @@
                 mr-24
                 transform
                 opacity-0
-                delay-200
+                delay-100
                 group-hover:translate-x-18 group-hover:opacity-100
                 transition
                 duration-300
@@ -202,7 +202,7 @@
                 p-3
                 rounded-full
                 bg-green-400
-                delay-200
+                delay-100
                 ml-24
                 transform
                 opacity-0
